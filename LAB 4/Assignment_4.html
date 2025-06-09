@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Survey Form</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f2f2f2;
+      display: flex;
+      justify-content: center;
+      margin-top: 30px;
+    }
+
+    .container {
+      background-color: white;
+      padding: 20px 30px;
+      border-radius: 5px;
+      width: 50%;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    h2 {
+      text-align: center;
+      color: blue;
+      font-weight: bold;
+    }
+
+    input[type="text"], input[type="email"], input[type="number"], select, textarea {
+      width: 95%;
+      padding: 10px;
+      margin: 10px 0 10px 0;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
+    textarea {
+      resize: vertical;
+    }
+
+    label {
+      display: block;
+      margin-top: 10px;
+    }
+
+    .submit-button {
+      width: 100%;
+      background-color: #007BFF;
+      color: white;
+      padding: 10px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    .submit-button:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h2>Survey Form</h2>
+    <form>
+      <input type="text" placeholder="Enter your name" required>
+      <input type="email" placeholder="Enter your email" required>
+      <input type="number" placeholder="Enter your age" required>
+
+      <select>
+        <option>Student</option>
+        <option>Working Professional</option>
+        <option>Other</option>
+      </select>
+
+      <label>Would you recommend this survey form to a friend?</label>
+      <input type="radio" name="recommend" value="yes"> Yes<br>
+      <input type="radio" name="recommend" value="no"> No<br>
+      <input type="radio" name="recommend" value="maybe"> Maybe
+
+      <label>Languages and Frameworks known <small>(Check all that apply)</small></label>
+      <input type="checkbox" name="lang" value="Java"> Java<br>
+      <input type="checkbox" name="lang" value="Python"> Python<br>
+      <input type="checkbox" name="lang" value="React"> React<br>
+      <input type="checkbox" name="lang" value="Angular"> Angular<br>
+      <input type="checkbox" name="lang" value="Spring"> Spring<br>
+
+      <label>Any comments or suggestions</label>
+      <textarea rows="3"></textarea>
+
+      <br><br>
+      <button type="submit" class="submit-button">Sign Up</button>
+    </form>
+  </div>
+
+</body>
+</html>
