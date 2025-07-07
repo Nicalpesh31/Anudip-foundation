@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Photo Gallery</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+
+        .container {
+            padding: 20px;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+        }
+
+        button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 15px;
+            margin-top: 30px;
+            padding: 0 20px;
+        }
+
+        .card {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            transition: transform 0.2s;
+        }
+
+        .card:hover {
+            transform: scale(1.03);
+        }
+
+        .card img {
+            width: 100%;
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Photo Gallery</h1>
+        <button id="loadBtn">Load Random Images</button>
+        <div id="gallery" class="gallery"></div>
+    </div>
+
+    <script>
+        const gallery = document.getElementById('gallery');
+        const loadBtn = document.getElementById('loadBtn');
+
+        loadBtn.addEventListener('click', () => {
+            gallery.innerHTML = ''; 
+
+            for (let i = 0; i < 10; i++) {
+                const card = document.createElement('div');
+                card.className = 'card';
+
+                const img = document.createElement('img');
+                // Unsplash Source: add ?sig= to ensure randomness
+                img.src = `https://unsplash.com/t/nature/300x300?sig=${Math.random()}`;
+                img.alt = 'Random Image';
+
+                card.appendChild(img);
+                gallery.appendChild(card);
+            }
+        });
+
+    </script>
+</body>
+
+</html>
